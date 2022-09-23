@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button id="btn">click me</button>
+ 
+    <div style="width: 300px;height: 300px;background:rgb(0, 0, 0);" id="box">
+
+    </div>
+    <label style="display: none;" for="" id="error">enter minimum</label>
+    <input type="text" id="inp">
+    <input type="text" id="">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+               // alert("button clicked")
+               $("#box").fadeToggle(2000)
+
+            })
+            $("#btn").mouseenter(function(){
+                $(this).css({"background":"blue"})
+            })
+            $("#inp").blur(function(){
+                var text=$(this).val()
+                if(text.length<4){
+                   // alert("enter minimum carectors")
+                    $("#error").show()
+                }else{
+                    $("#error").hide()
+                }
+            })
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>
